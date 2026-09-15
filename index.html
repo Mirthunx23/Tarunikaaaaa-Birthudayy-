@@ -1,1 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Happy Birthday Tarunika 🎂❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    text-align:center;
+    color:white;
+    background:linear-gradient(135deg,#ff7eb3,#ffb6d9,#ffd6e8);
+}
+
+.container{
+    position:relative;
+    z-index:2;
+    padding:25px 18px 50px;
+}
+
+.balloons{
+    font-size:55px;
+    margin-top:10px;
+    animation:float 2s ease-in-out infinite;
+}
+
+h1{
+    font-size:42px;
+    margin-top:15px;
+    text-shadow:0 4px 12px rgba(0,0,0,.2);
+    animation:fadeDown 1.3s ease;
+}
+
+.subtitle{
+    font-size:20px;
+    margin-top:10px;
+    animation:fadeUp 1.7s ease;
+}
+
+.photo{
+    width:270px;
+    height:270px;
+    object-fit:cover;
+    border-radius:25px;
+    border:6px solid white;
+    margin-top:25px;
+    box-shadow:0 0 30px rgba(255,255,255,.8);
+    animation:zoom 1.8s ease;
+}
+
+.message{
+    max-width:700px;
+    margin:30px auto;
+    padding:25px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(10px);
+    border-radius:25px;
+    font-size:18px;
+    line-height:1.8;
+    box-shadow:0 8px 30px rgba(0,0,0,.12);
+}
+
+button{
+    padding:16px 32px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#ff3f88;
+    font-size:19px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+#surprise{
+    display:none;
+    max-width:650px;
+    margin:25px auto 0;
+    padding:22px;
+    background:rgba(255,255,255,.2);
+    border-radius:20px;
+    font-size:20px;
+    line-height:1.7;
+    animation:fadeUp 1s ease;
+}
+
+.confetti{
+    position:fixed;
+    top:-20px;
+    font-size:25px;
+    pointer-events:none;
+    animation:fall linear forwards;
+}
+
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:24px;
+    pointer-events:none;
+    animation:heartFloat linear forwards;
+}
+
+.sparkle{
+    position:fixed;
+    pointer-events:none;
+    font-size:18px;
+    animation:sparkleMove 2s ease forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+    }
+}
+
+@keyframes heartFloat{
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+
+@keyframes sparkleMove{
+    0%{
+        opacity:1;
+        transform:scale(1);
+    }
+    100%{
+        opacity:0;
+        transform:translateY(-50px) scale(1.5);
+    }
+}
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes zoom{
+    from{
+        opacity:0;
+        transform:scale(.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-12px);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="balloons">🎈🎈🎈</div>
+
+<h1>Happy Birthday, Tarunika! 🎂❤️</h1>
+
+<p class="subtitle">
+A little surprise made just for you ✨
+</p>
+
+<img src="Snapchat-1539654182.jpg" class="photo" alt="Tarunika">
+
+<div class="message">
+
+Hey Tarunika, 💗<br><br>
+
+Happy Birthday to someone who is genuinely
+very special to me. ❤️<br><br>
+
+I hope this year brings you lots of happiness,
+beautiful memories, and everything you've been
+wishing for. ✨<br><br>
+
+You deserve all the good things coming your way.
+Keep smiling, keep being yourself, and have the
+most amazing birthday! 🎂💖
+
+</div>
+
+<button onclick="openGift()">
+🎁 Open Your Surprise
+</button>
+
+<div id="surprise">
+
+I hope this little surprise makes your birthday
+a little more special. 🥹❤️<br><br>
+
+No matter where life takes you, I hope you always
+have reasons to smile. ✨<br><br>
+
+<strong>Happy Birthday once again, Tarunika! 🎂🥳❤️</strong>
+
+  </div>
+<script>
+
+function openGift(){
+
+    document.getElementById("surprise").style.display = "block";
+
+    // Birthday confetti 🎉
+    for(let i = 0; i < 70; i++){
+        setTimeout(createConfetti, i * 35);
+    }
+
+    // Extra hearts ❤️
+    for(let i = 0; i < 25; i++){
+        setTimeout(createHeart, i * 80);
+    }
+}
+
+
+// 🎉 Confetti
+function createConfetti(){
+
+    const confetti = document.createElement("div");
+
+    confetti.className = "confetti";
+
+    const items = ["🎉","🎊","💖","❤️","✨","🎈","🌹"];
+
+    confetti.innerHTML =
+        items[Math.floor(Math.random() * items.length)];
+
+    confetti.style.left = Math.random() * 100 + "vw";
+
+    confetti.style.animationDuration =
+        (3 + Math.random() * 4) + "s";
+
+    document.body.appendChild(confetti);
+
+    setTimeout(() => {
+        confetti.remove();
+    },7000);
+}
+
+
+// ❤️ Floating hearts
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = ["❤️","💖","💕","💗","💓"];
+
+    heart.innerHTML =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    },10000);
+}
+
+
+// ✨ Sparkles
+function createSparkle(){
+
+    const sparkle = document.createElement("div");
+
+    sparkle.className = "sparkle";
+    sparkle.innerHTML = "✨";
+
+    sparkle.style.left = Math.random() * 100 + "vw";
+    sparkle.style.top = Math.random() * 100 + "vh";
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => {
+        sparkle.remove();
+    },2000);
+}
+
+
+// Keep hearts floating
+setInterval(createHeart,700);
+
+// Keep sparkles appearing
+setInterval(createSparkle,500);
+
+
+// 🎈 Start with some confetti
+window.onload = function(){
+
+    for(let i = 0; i < 25; i++){
+        setTimeout(createConfetti, i * 100);
+    }
+
+};
+
+</script>
+
+</body>
+</html>
